@@ -40,7 +40,7 @@ class View(Tk):
         self.create_remove_button()
         self.create_reset_button()
         self.del_file_path()
-        self.submitFunction()
+
         
     
     def main(self):
