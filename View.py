@@ -22,8 +22,8 @@ class View(Tk):
         self.TitleFontStyle = tkFont.Font(family='Verdana', size=28)
         
         #Main view
-        self.geometry('500x800') #Window resolutin
-        self.resizable(False, False) # Resolution is fixed
+        self.minsize(800, 800) #Window resolutin
+        self.resizable(True, True) # Resolution is fixed
         self.title('To-Do List') #Tk window title
         
         
@@ -73,12 +73,12 @@ class View(Tk):
     def list_elements(self):
         self.todo_list = Listbox(self.center_frame, bg='#CAE8DA', font=self.defaultFontStyle, height=35, width=55)
         
-        scroll = Scrollbar(self.center_frame, orient=VERTICAL, command=self.todo_list.yview)
-        scroll.place(x=439,y=51, height=455)
-        self.todo_list.config(yscrollcommand=scroll.set)
-        scroll_hot = Scrollbar(self.center_frame, orient=HORIZONTAL, command=self.todo_list.xview)
-        scroll_hot.place(x= 51, y=507, width=400)
-        self.todo_list.config(xscrollcommand=scroll_hot.set)
+        #scroll = Scrollbar(self.center_frame, orient=VERTICAL, command=self.todo_list.yview)
+        #scroll.place(x=439,y=51, height=455)
+        #self.todo_list.config(yscrollcommand=scroll.set)
+        #scroll_hot = Scrollbar(self.center_frame, orient=HORIZONTAL, command=self.todo_list.xview)
+        #scroll_hot.place(x= 51, y=507, width=400)
+        #self.todo_list.config(xscrollcommand=scroll_hot.set)
         self.todo_list.grid(row=0, column=2, padx=50, pady=50)
         
     #input section
