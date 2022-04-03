@@ -73,12 +73,13 @@ class View(Tk):
     def list_elements(self):
         self.todo_list = Listbox(self.center_frame, bg='#CAE8DA', font=self.defaultFontStyle, height=35, width=55)
         
-        #scroll = Scrollbar(self.center_frame, orient=VERTICAL, command=self.todo_list.yview)
-        #scroll.place(x=439,y=51, height=455)
-        #self.todo_list.config(yscrollcommand=scroll.set)
-        #scroll_hot = Scrollbar(self.center_frame, orient=HORIZONTAL, command=self.todo_list.xview)
-        #scroll_hot.place(x= 51, y=507, width=400)
-        #self.todo_list.config(xscrollcommand=scroll_hot.set)
+        scroll = Scrollbar(self.todo_list, orient=VERTICAL, command=self.todo_list.yview) #siin panin esiteks nad sul todo_listile
+        #vaata minul need views canvas place asjad. relx ja rely on need, mis säilitavad õige koha tal, anchor ja muud asjad samamoodi. katseeksitus.
+        scroll.place(rely=1,relx=0.5, anchor=W, height=455) #siin näide, kuidas place kasutada. mina ka suht mängisin sellega, aga mulle tundub, et siin pead lihtsalt katsetama ja googeldama
+        self.todo_list.config(yscrollcommand=scroll.set)
+        scroll_hot = Scrollbar(self.todo_list, orient=HORIZONTAL, command=self.todo_list.xview) #siin ka
+        scroll_hot.place(x= 51, y=507, width=400)
+        self.todo_list.config(xscrollcommand=scroll_hot.set)
         self.todo_list.grid(row=0, column=2, padx=50, pady=50)
         
     #input section
